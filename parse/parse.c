@@ -6,7 +6,7 @@
 /*   By: jcluzet <jo@cluzet.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/13 22:23:05 by jcluzet           #+#    #+#             */
-/*   Updated: 2021/02/06 00:43:46 by jcluzet          ###   ########.fr       */
+/*   Updated: 2021/02/06 21:28:05 by jcluzet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@ int	parse(int argc, char *str, t_parse *parse, t_display *display)
 {
 	int		fd;
 
-	initparse(display);
 	if (argc == 3)
 		display->bmp = 1;
 	else
