@@ -6,7 +6,7 @@
 /*   By: jcluzet <jo@cluzet.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/08 19:25:03 by jcluzet           #+#    #+#             */
-/*   Updated: 2021/02/06 00:40:11 by jcluzet          ###   ########.fr       */
+/*   Updated: 2021/02/06 15:19:26 by jcluzet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,8 @@ void	getspriteinfo(t_display *display, int index)
 		display->spritenumber = 5;
 	if (display->spritenum[index] == '3')
 		display->spritenumber = 10;
-	if (display->spritenum[index] == 'k')
-		display->spritenumber = 11;
+	if (display->spritenum[index] == '4')
+		display->spritenumber = 11 + display->spritemove;
 	display->onspritex = display->spritex[index] - display->player.x + 0.5;
 	display->onspritey = display->spritey[index] - display->player.y + 0.5;
 	display->invdet = 1.0 / (display->planex * display->diry
@@ -48,6 +48,12 @@ void	getxandyofsprite(t_display *display)
 	display->drawendx = display->spritewidth / 2 + display->spritescreenx;
 	if (display->drawendx >= display->r1)
 		display->drawendx = display->r1 - 1;
+	if (display->spritemove == 0)
+		display->spritemove = 1;
+	else if (display->spritemove == 1)
+		display->spritemove = 2;
+	else
+		display->spritemove = 0;
 }
 
 void	printsprite(t_display *display, int index)

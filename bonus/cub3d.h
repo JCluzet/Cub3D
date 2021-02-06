@@ -6,7 +6,7 @@
 /*   By: jcluzet <jo@cluzet.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/13 22:12:09 by jcluzet           #+#    #+#             */
-/*   Updated: 2021/02/06 00:41:28 by jcluzet          ###   ########.fr       */
+/*   Updated: 2021/02/06 15:20:46 by jcluzet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,6 +73,7 @@ typedef struct		s_display
 	double			transformx;
 	double			transformy;
 	int				spritescreenx;
+	int				spritemove;
 	int				spriteheight;
 	int				spritewidth;
 	int				drawstarty;
@@ -108,10 +109,10 @@ typedef struct		s_display
 	int				keyboard[65364];
 	int				index;
 	int				bpp;
-	int				bpp2[12];
+	int				bpp2[14];
 	int				s_line;
-	int				s_line2[12];
-	int				ed2[12];
+	int				s_line2[14];
+	int				ed2[14];
 	int				ed;
 	int				startline;
 	int				endline;
@@ -158,8 +159,8 @@ typedef struct		s_display
 	int				*spritey;
 	double			*spritedist;
 	int				numberofplayer;
-	int				widthtext[12];
-	int				heighttext[12];
+	int				widthtext[14];
+	int				heighttext[14];
 	void			*text_no;
 	void			*text_so;
 	char			*filename;
@@ -174,8 +175,10 @@ typedef struct		s_display
 	void			*sprite;
 	void			*sprite2;
 	void			*sprite3;
+	void			*sprite3move;
+	void			*sprite4move;
 	int				textnum;
-	char			*ptr[12];
+	char			*ptr[14];
 	clock_t			last_frame;
 	clock_t			next_frame;
 	unsigned int	color;
@@ -236,6 +239,8 @@ int					checkaround(int mapx, int mapy, t_display *display);
 int					switchspriteforsort(t_display *display, int index);
 void				rotation(int i, t_display *display);
 int					freemap(t_display *display);
+void				get_life(t_display *display);
+void				loadsprites2(t_display *display);
 int					checkifgood2(char c);
 void				getinfowalltext(t_display *display, int x);
 int					findtexturenum(t_display *display);

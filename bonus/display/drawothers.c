@@ -6,7 +6,7 @@
 /*   By: jcluzet <jo@cluzet.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/08 19:25:03 by jcluzet           #+#    #+#             */
-/*   Updated: 2021/02/06 00:40:08 by jcluzet          ###   ########.fr       */
+/*   Updated: 2021/02/06 15:17:05 by jcluzet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,7 @@ void	drawlife(t_display *display)
 	int		y;
 	double	life;
 
+	get_life(display);
 	life = (display->life / 100);
 	life = life * 190;
 	x = 0;
@@ -60,4 +61,15 @@ void	drawlife(t_display *display)
 		x = 0;
 		y++;
 	}
+}
+
+void	get_life(t_display *display)
+{
+	if (display->life < 0.1)
+	{
+		printf("\033[31m\n --- GAME OVER --- \n");
+		freeandexit(display);
+	}
+	if (display->map[(int)display->player.y][(int)display->player.x] == '4')
+		display->life = display->life - 1;
 }

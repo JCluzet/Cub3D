@@ -6,7 +6,7 @@
 /*   By: jcluzet <jo@cluzet.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/08 19:25:03 by jcluzet           #+#    #+#             */
-/*   Updated: 2021/02/06 00:40:36 by jcluzet          ###   ########.fr       */
+/*   Updated: 2021/02/06 14:22:05 by jcluzet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,14 +16,14 @@ int		floodandfill(t_display *display, int mapy, int mapx)
 {
 	if (display->map[mapy][mapx] == '9' ||
 	display->map[mapy][mapx] == 's' || display->map[mapy][mapx] == 'd'
-	|| display->map[mapy][mapx] == '4' || display->map[mapy][mapx] == 'S')
+	|| display->map[mapy][mapx] == 'k' || display->map[mapy][mapx] == 'S')
 	{
 		if (checkaround(mapx, mapy, display) == 0)
 			showerror(display, "Map is not surrounded/closed by walls");
 		if (display->map[mapy][mapx] == 's')
 			display->map[mapy][mapx] = '2';
-		if (display->map[mapy][mapx] == '4')
-			display->map[mapy][mapx] = 'k';
+		if (display->map[mapy][mapx] == 'k')
+			display->map[mapy][mapx] = '4';
 		if (display->map[mapy][mapx] == 'S')
 			display->map[mapy][mapx] = '3';
 		if (display->map[mapy][mapx] == 'd')
@@ -51,7 +51,7 @@ int		checkifgood2(char c)
 {
 	if (c != '0' && c != '1' && c != '2' && c != ' '
 	&& c != '3' && c != '8' && c != 'N' && c != 'W'
-	&& c != 'E' && c != 'S' && c != 'k')
+	&& c != 'E' && c != 'S' && c != '4')
 		return (0);
 	return (1);
 }

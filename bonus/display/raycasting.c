@@ -6,7 +6,7 @@
 /*   By: jcluzet <jo@cluzet.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/12 18:14:15 by jcluzet           #+#    #+#             */
-/*   Updated: 2021/02/06 00:40:33 by jcluzet          ###   ########.fr       */
+/*   Updated: 2021/02/06 15:09:40 by jcluzet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,6 @@ int	raycasting(t_display *display)
 	minimap(display);
 	drawgun(display);
 	drawlife(display);
-	mlx_put_image_to_window(display->mlx_ptr,
-	display->mlx_win, display->img, 0, 0);
 	return (0);
 }
 
