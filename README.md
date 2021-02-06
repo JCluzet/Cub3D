@@ -32,6 +32,22 @@ Other example of Basic Parts with import texture :
 - Gun 
 - Collision with walls
 
+#### Keys for qwerty keyboard : 
+
+ - [FORWARD]  =  W
+ - [GO_LEFT]  =  A
+ - [GO_RIGHT] =  D
+ - [BACKWARD] =  S
+ 
+ - [ROTATION_RIGHT]  =  →
+ - [ROTATION_LEFT]   =  ←
+ - [EXIT]            =  ESC
+ 
+##### KEY for bonus part :
+
+ - [OPEN_DOOR]     =  9
+ - [SWITH_LIGHTS]  =  0
+
 Resources for textures 64x64 downloaded here: http://www.wolfenvault.com/resources.html
 
 If you encounter any problems when launching the game or if you have any questions, don't hesitate to send me an e-mail : jcluzet@student.42.fr
