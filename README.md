@@ -34,4 +34,4 @@ Other example of Basic Parts with import texture :
 
 Resources for textures 64x64 downloaded here: http://www.wolfenvault.com/resources.html
 
-If you encounter any problems when launching the game or if you have any questions, don't hesitate to send me an e-mail : jcluzet@student.42.fr :)
+If you encounter any problems when launching the game or if you have any questions, don't hesitate to send me an e-mail : jcluzet@student.42.fr
