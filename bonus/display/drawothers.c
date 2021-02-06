@@ -6,7 +6,7 @@
 /*   By: jcluzet <jo@cluzet.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/08 19:25:03 by jcluzet           #+#    #+#             */
-/*   Updated: 2021/02/06 15:17:05 by jcluzet          ###   ########.fr       */
+/*   Updated: 2021/02/06 15:38:25 by jcluzet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,5 +71,5 @@ void	get_life(t_display *display)
 		freeandexit(display);
 	}
 	if (display->map[(int)display->player.y][(int)display->player.x] == '4')
-		display->life = display->life - 1;
+		display->life = display->life - 0.1;
 }
