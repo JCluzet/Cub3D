@@ -50,4 +50,8 @@ Other example of Basic Parts with import texture :
 
 Resources for textures 64x64 downloaded here: http://www.wolfenvault.com/resources.html
 
+Project completed thanks to the precious help of Lodev and his Raycasting tutorial : https://lodev.org/cgtutor/raycasting.html
+
+Video (in french) to understand how raycasting work : https://www.youtube.com/watch?v=ZAlMicFhHmM
+
 If you encounter any problems when launching the game or if you have any questions, don't hesitate to send me an e-mail : jcluzet@student.42.fr
