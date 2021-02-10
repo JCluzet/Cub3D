@@ -22,15 +22,15 @@ Other example of Basic Parts with import texture :
 
 ## Bonus Parts include :
 
-- Open Door with key 9
-- Switch Ligths with key 0
-- 2 types of Sprites
-- Shadow effect based on distance
-- Color Minimap
-- Door
-- Life (Never goes down, but works with a variable from 0 to 100%.)
-- Gun 
-- Collision with walls
+[x] Open Door with key 9
+[x] Switch Ligths with key 0
+[x] 2 types of Sprites
+[x] Shadow effect based on distance
+[x] Color Minimap
+[x] Door
+[x] Life (Never goes down, but works with a variable from 0 to 100%.)
+[x] Gun 
+[x] Collision with walls
 
 #### Keys for qwerty keyboard : 
 
