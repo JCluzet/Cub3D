@@ -6,7 +6,7 @@
 /*   By: jcluzet <jo@cluzet.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/08 19:25:03 by jcluzet           #+#    #+#             */
-/*   Updated: 2021/02/06 15:19:26 by jcluzet          ###   ########.fr       */
+/*   Updated: 2021/02/11 14:22:36 by jcluzet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,8 +71,7 @@ void	printsprite(t_display *display, int index)
 		+ display->s_line2[display->spritenumber]
 		* display->texy + display->texx *
 		(display->bpp2[display->spritenumber] / 8));
-		if ((display->colorsprite & 0x00FFFFFF) != 0 &&
-		display->y < display->r2 && display->stripe < display->r1)
+		if ((display->colorsprite & 0x00FFFFFF) != 0)
 			put_pxl(display, display->stripe, display->y,
 			addsmog3(display->spritedist[index],
 			display, display->colorsprite));
@@ -97,7 +96,7 @@ void	showsprite(t_display *display)
 			(-display->spritewidth / 2 + display->spritescreenx)) *
 			display->widthtext[display->spritenumber]
 			/ display->spritewidth) / 256;
-			if (display->transformy > 0 && display->stripe > 0
+			if (display->transformy > 0.1 && display->stripe > 0
 			&& display->stripe < display->r1
 			&& display->transformy < display->zbuffer[display->stripe])
 				printsprite(display, index);

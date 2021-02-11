@@ -6,7 +6,7 @@
 /*   By: jcluzet <jo@cluzet.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/08 19:25:03 by jcluzet           #+#    #+#             */
-/*   Updated: 2021/02/06 00:41:52 by jcluzet          ###   ########.fr       */
+/*   Updated: 2021/02/11 14:24:48 by jcluzet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,7 +83,7 @@ void	showsprite(t_display *display)
 			(-display->spritewidth / 2 + display->spritescreenx)) *
 			display->widthtext[5]
 			/ display->spritewidth) / 256;
-			if (display->transformy > 0 && display->stripe > 0
+			if (display->transformy > 0.1 && display->stripe > 0
 			&& display->stripe < display->r1
 			&& display->transformy < display->zbuffer[display->stripe])
 				printsprite(display);
