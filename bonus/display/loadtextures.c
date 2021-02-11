@@ -6,7 +6,7 @@
 /*   By: jcluzet <jo@cluzet.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/08 19:25:03 by jcluzet           #+#    #+#             */
-/*   Updated: 2021/02/06 00:40:27 by jcluzet          ###   ########.fr       */
+/*   Updated: 2021/02/11 19:11:19 by jcluzet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ void	loadtexturesbonus(t_display *display)
 		display->ptr[4] = mlx_get_data_addr(display->text_gun,
 		&(display->bpp2[4]), &(display->s_line2[4]), &(display->ed2[4]));
 	if ((display->text_door = mlx_xpm_file_to_image(display->mlx_ptr,
-	"./textures/door.xpm", &display->widthtext[6], &display->heighttext[6])))
+	"./textures/Door.xpm", &display->widthtext[6], &display->heighttext[6])))
 		display->ptr[6] = mlx_get_data_addr(display->text_door,
 		&(display->bpp2[6]), &(display->s_line2[6]), &(display->ed2[6]));
 	if ((display->text_floor = mlx_xpm_file_to_image(display->mlx_ptr,

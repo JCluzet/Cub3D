@@ -6,7 +6,7 @@
 /*   By: jcluzet <jo@cluzet.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/13 22:12:09 by jcluzet           #+#    #+#             */
-/*   Updated: 2021/02/06 15:20:46 by jcluzet          ###   ########.fr       */
+/*   Updated: 2021/02/11 18:52:44 by jcluzet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -106,7 +106,7 @@ typedef struct		s_display
 	float			posz;
 	int				pfloor;
 	int				maptofree;
-	int				keyboard[65364];
+	int				keyboard[100000];
 	int				index;
 	int				bpp;
 	int				bpp2[14];
