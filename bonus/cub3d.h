@@ -6,7 +6,7 @@
 /*   By: jcluzet <jo@cluzet.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/13 22:12:09 by jcluzet           #+#    #+#             */
-/*   Updated: 2021/02/11 18:52:44 by jcluzet          ###   ########.fr       */
+/*   Updated: 2021/02/12 00:19:01 by jcluzet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -275,6 +275,7 @@ int					stockcolorc(char *line, t_display *display);
 void				drawloop(t_display *display, int y, int x);
 int					replacecharinmap(t_display *display, \
 					char *line, int i, int len);
+int					ft_expose(t_display *display);
 int					draw_line(t_display *display, int x);
 void				getxy2(t_parse *parse, int b, char *line, int fd);
 int					stockmap(t_parse *parse, t_display *display);

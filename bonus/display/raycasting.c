@@ -6,7 +6,7 @@
 /*   By: jcluzet <jo@cluzet.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/12 18:14:15 by jcluzet           #+#    #+#             */
-/*   Updated: 2021/02/06 15:40:30 by jcluzet          ###   ########.fr       */
+/*   Updated: 2021/02/12 00:29:27 by jcluzet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,12 @@ int	raycasting(t_display *display)
 		display->index--;
 	}
 	sendrayon(display);
+	if (display->bmp == 1)
+	{
+		minimap(display);
+		drawgun(display);
+		drawlife(display);
+	}
 	return (0);
 }
 

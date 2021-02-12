@@ -6,7 +6,7 @@
 /*   By: jcluzet <jo@cluzet.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/08 19:25:03 by jcluzet           #+#    #+#             */
-/*   Updated: 2021/02/11 19:15:07 by jcluzet          ###   ########.fr       */
+/*   Updated: 2021/02/12 02:27:29 by jcluzet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int		display(t_parse *parse, t_display *display)
 	mlx_hook(display->mlx_win, 2, 1L, ft_key_hit, display);
 	mlx_hook(display->mlx_win, 3, 2L, ft_key_release, display);
 	mlx_hook(display->mlx_win, CLOSERED, 1L << 17, closebyredbutton, display);
-	mlx_hook(display->mlx_win, 12, 0, ft_key_hit, display);
+	mlx_hook(display->mlx_win, 12, 0, ft_expose, display);
 	mlx_loop_hook(display->mlx_ptr, &key_loop, display);
 	mlx_loop(display->mlx_ptr);
 	return (0);
@@ -30,30 +30,26 @@ int		display(t_parse *parse, t_display *display)
 
 int		newwindow(t_display *display)
 {
-	if ((display->mlx_ptr = mlx_init()) == NULL)
-		return (EXIT_FAILURE);
+	display->mlx_ptr = mlx_init();
 	checkresolution(display);
-	resizeminimap(display);
 	display->img = mlx_new_image(display->mlx_ptr, display->r1, display->r2);
 	display->pxl = mlx_get_data_addr(display->img,
-			&(display->bpp), &(display->s_line),
-			&(display->ed));
+			&(display->bpp), &(display->s_line), &(display->ed));
 	display->last_frame = clock();
 	display->next_frame = 0;
-	if ((display->mlx_win = mlx_new_window(display->mlx_ptr, display->r1,
-		display->r2, "42 Cub3D JCluzet")) == NULL)
-		return (EXIT_FAILURE);
-	else
+	if (display->bmp == 0)
+		mlx_new_window(display->mlx_ptr, display->r1,
+			display->r2, "42 Cub3D JCluzet");
+	if (display->bmp == 0)
 		display->initsuccess = 1;
 	loadtextures(display);
 	loadsprites(display);
 	raycasting(display);
 	if (display->bmp == 0)
-	{
 		mlx_put_image_to_window(display->mlx_ptr,
 			display->mlx_win, display->img, 0, 0);
+	if (display->bmp == 0)
 		printf("\033[0;32m[ Cub3D launched Successfully ]\n");
-	}
 	return (0);
 }
 
@@ -99,4 +95,11 @@ void	initdisplay(t_display *display, t_parse *parse)
 	display->keyboard[ADVANCE] = 0;
 	display->keyboard[LIGHTS] = 0;
 	display->keyboard[OPEN_DOOR] = 0;
+}
+
+int		ft_expose(t_display *display)
+{
+	mlx_put_image_to_window(display->mlx_ptr,
+	display->mlx_win, display->img, 0, 0);
+	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: jcluzet <jo@cluzet.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/13 22:23:05 by jcluzet           #+#    #+#             */
-/*   Updated: 2021/02/06 00:40:52 by jcluzet          ###   ########.fr       */
+/*   Updated: 2021/02/12 02:26:27 by jcluzet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,6 +76,7 @@ int	checkresolution(t_display *display)
 		display->r1 = x;
 	if (display->r2 > y)
 		display->r2 = y;
+	resizeminimap(display);
 	return (1);
 }
 
