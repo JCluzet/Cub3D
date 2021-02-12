@@ -6,7 +6,7 @@
 /*   By: jcluzet <jo@cluzet.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/08 19:25:03 by jcluzet           #+#    #+#             */
-/*   Updated: 2021/02/12 14:58:39 by jcluzet          ###   ########.fr       */
+/*   Updated: 2021/02/12 15:02:55 by jcluzet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,8 +43,7 @@ void	drawlife(t_display *display)
 	double	life;
 
 	get_life(display);
-	life = (display->life / 100);
-	life = life * 190;
+	life = (display->life / 100) * 190;
 	x = 0;
 	y = 0;
 	raycasting(display);
