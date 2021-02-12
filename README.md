@@ -28,7 +28,7 @@ Other example of Basic Parts with import texture :
 - Shadow effect based on distance ✔️
 - Color Minimap ✔️
 - Door ✔️
-- Life (Never goes down, but works with a variable from 0 to 100%.) ✔️
+- Lose Life by walks next to monster (works with a variable from 0 to 100) ✔️
 - Gun ✔️
 - Collision with walls ✔️
 
