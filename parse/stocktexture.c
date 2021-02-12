@@ -6,7 +6,7 @@
 /*   By: jcluzet <jo@cluzet.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/13 22:23:05 by jcluzet           #+#    #+#             */
-/*   Updated: 2021/02/06 00:43:55 by jcluzet          ###   ########.fr       */
+/*   Updated: 2021/02/12 15:54:14 by jcluzet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ int	stocktextures_no(char *line, t_display *display)
 
 	i = numberblank(line);
 	l = 0;
+	if (display->north != NULL)
+		showerror(display, "Texture NO is duplicated");
 	if (((display->north = malloc(sizeof(char)
 	* strlentoend(line + i) + 1))) == NULL)
 		showerror(display, "Unable to Malloc");
@@ -41,6 +43,8 @@ int	stocktextures_so(char *line, t_display *display)
 
 	i = numberblank(line);
 	l = 0;
+	if (display->south != NULL)
+		showerror(display, "Texture SO is duplicated");
 	if ((open(line + i, O_RDONLY) == -1))
 		showerror(display, "Texture SO not existing");
 	if (((display->south = malloc(sizeof(char)
@@ -63,6 +67,8 @@ int	stocktextures_we(char *line, t_display *display)
 
 	i = numberblank(line);
 	l = 0;
+	if (display->west != NULL)
+		showerror(display, "Texture WE is duplicated");
 	if ((open(line + i, O_RDONLY) == -1))
 		showerror(display, "Texture WE not existing");
 	if (((display->west = malloc(sizeof(char)
@@ -85,6 +91,9 @@ int	stocktextures_ea(char *line, t_display *display)
 
 	i = numberblank(line);
 	l = 0;
+
+	if (display->east != NULL)
+		showerror(display, "Texture EA is duplicated");
 	if ((open(line + i, O_RDONLY) == -1))
 		showerror(display, "Texture EA not existing");
 	if (((display->east = malloc(sizeof(char)
@@ -107,6 +116,8 @@ int	stocktextures_s(char *line, t_display *display)
 
 	i = numberblank(line);
 	l = 0;
+	if (display->spritepwd != NULL)
+		showerror(display, "Texture S is duplicated");
 	if ((open(line + i, O_RDONLY) == -1))
 		showerror(display, "Texture Sprite not existing");
 	if (((display->spritepwd = malloc(sizeof(char)
