@@ -6,7 +6,7 @@
 /*   By: jcluzet <jo@cluzet.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/13 22:12:09 by jcluzet           #+#    #+#             */
-/*   Updated: 2021/02/12 00:19:01 by jcluzet          ###   ########.fr       */
+/*   Updated: 2021/02/12 02:42:09 by jcluzet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -232,6 +232,7 @@ int					stocktextures_s(char *line, t_display *display);
 void				printsprite(t_display *display, int index);
 int					opendoor(t_display *display);
 void				minimap(t_display *display);
+void				checksizetext(t_display *display);
 void				getxandyofsprite(t_display *display);
 int					getverticaldata(t_display *display, int y);
 int					gethorizontaldata(t_display *display);

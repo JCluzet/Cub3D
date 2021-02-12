@@ -73,7 +73,6 @@ endif
 ifeq ($(UNAME), Linux)
 clean:
 			@ echo "\033[31m[Remove last version...]"
-			@ chmod 777 mlx_linux/configure
 			@ $(MAKE) -C mlx_linux clean
 			@ $(RMRF) Cub3D.dSYM cub3D_bonus.dSYM
 			@ $(RM) $(BMP)
@@ -81,7 +80,7 @@ endif
 
 fclean:		clean
 			@ $(RM) $(MLX)
-			$(RM) $(NAME)
+			$(RM) cub3D
 			$(RM) cub3D_bonus
 
 

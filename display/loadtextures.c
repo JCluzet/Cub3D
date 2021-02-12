@@ -6,7 +6,7 @@
 /*   By: jcluzet <jo@cluzet.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/08 19:25:03 by jcluzet           #+#    #+#             */
-/*   Updated: 2021/02/06 00:42:05 by jcluzet          ###   ########.fr       */
+/*   Updated: 2021/02/12 03:00:56 by jcluzet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,4 +30,18 @@ void	loadtextures(t_display *display)
 	display->east, &display->widthtext[3], &display->heighttext[3])))
 		display->ptr[3] = mlx_get_data_addr(display->text_ea,
 		&(display->bpp2[3]), &(display->s_line2[3]), &(display->ed2[3]));
+	checksizetext(display);
+}
+
+void	checksizetext(t_display *display)
+{
+	int i;
+
+	i = 0;
+	while (i < 4)
+	{
+		if (display->widthtext[i] > 64 || display->heighttext[i] > 64)
+			showerror(display, "Wall textures max is 64 x 64 pixels");
+		i++;
+	}
 }

@@ -6,7 +6,7 @@
 /*   By: jcluzet <jo@cluzet.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/08 19:25:03 by jcluzet           #+#    #+#             */
-/*   Updated: 2021/02/12 02:27:29 by jcluzet          ###   ########.fr       */
+/*   Updated: 2021/02/12 03:00:37 by jcluzet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,14 +34,18 @@ int		newwindow(t_display *display)
 	checkresolution(display);
 	display->img = mlx_new_image(display->mlx_ptr, display->r1, display->r2);
 	display->pxl = mlx_get_data_addr(display->img,
-			&(display->bpp), &(display->s_line), &(display->ed));
+			&(display->bpp), &(display->s_line),
+			&(display->ed));
 	display->last_frame = clock();
 	display->next_frame = 0;
 	if (display->bmp == 0)
-		mlx_new_window(display->mlx_ptr, display->r1,
-			display->r2, "42 Cub3D JCluzet");
-	if (display->bmp == 0)
-		display->initsuccess = 1;
+	{
+		if ((display->mlx_win = mlx_new_window(display->mlx_ptr, display->r1,
+			display->r2, "42 Cub3D JCluzet")) == NULL)
+			return (EXIT_FAILURE);
+		else
+			display->initsuccess = 1;
+	}
 	loadtextures(display);
 	loadsprites(display);
 	raycasting(display);

@@ -6,7 +6,7 @@
 /*   By: jcluzet <jo@cluzet.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/13 22:12:09 by jcluzet           #+#    #+#             */
-/*   Updated: 2021/02/12 00:18:47 by jcluzet          ###   ########.fr       */
+/*   Updated: 2021/02/12 02:53:34 by jcluzet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -216,6 +216,7 @@ void				rotation(int i, t_display *display);
 int					freemap(t_display *display);
 int					ft_expose(t_display *display);
 int					checkifgood2(char c);
+void				checksizetext(t_display *display);
 void				getinfowalltext(t_display *display, int x);
 int					findtexturenum(t_display *display);
 void				loadtexturesbonus(t_display *display);
