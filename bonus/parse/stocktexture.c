@@ -6,7 +6,7 @@
 /*   By: jcluzet <jo@cluzet.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/13 22:23:05 by jcluzet           #+#    #+#             */
-/*   Updated: 2021/02/12 15:55:24 by jcluzet          ###   ########.fr       */
+/*   Updated: 2021/02/12 16:18:13 by jcluzet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,7 +91,6 @@ int	stocktextures_ea(char *line, t_display *display)
 
 	i = numberblank(line);
 	l = 0;
-
 	if (display->east != NULL)
 		showerror(display, "Texture EA is duplicated");
 	if ((open(line + i, O_RDONLY) == -1))
