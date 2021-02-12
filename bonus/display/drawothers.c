@@ -6,7 +6,7 @@
 /*   By: jcluzet <jo@cluzet.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/08 19:25:03 by jcluzet           #+#    #+#             */
-/*   Updated: 2021/02/06 15:38:25 by jcluzet          ###   ########.fr       */
+/*   Updated: 2021/02/12 14:58:39 by jcluzet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,9 @@ void	drawlife(t_display *display)
 	life = life * 190;
 	x = 0;
 	y = 0;
+	raycasting(display);
+	if (display->spritecounted != 0)
+		showsprite(display);
 	while (y < 70)
 	{
 		while (x < life)

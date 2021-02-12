@@ -6,7 +6,7 @@
 /*   By: jcluzet <jo@cluzet.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/08 19:25:03 by jcluzet           #+#    #+#             */
-/*   Updated: 2021/02/12 03:00:37 by jcluzet          ###   ########.fr       */
+/*   Updated: 2021/02/12 14:59:03 by jcluzet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,11 +66,9 @@ int		key_loop(t_display *display)
 	|| display->keyboard[ADVANCE] || display->keyboard[LIGHTS]
 	|| (display->keyboard[OPEN_DOOR]))
 		raycasting(display);
-	if (display->spritecounted != 0)
-		showsprite(display);
+	drawlife(display);
 	minimap(display);
 	drawgun(display);
-	drawlife(display);
 	mlx_put_image_to_window(display->mlx_ptr,
 	display->mlx_win, display->img, 0, 0);
 	return (0);
