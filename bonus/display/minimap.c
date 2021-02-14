@@ -6,7 +6,7 @@
 /*   By: jcluzet <jo@cluzet.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/12 18:14:15 by jcluzet           #+#    #+#             */
-/*   Updated: 2021/02/06 00:40:30 by jcluzet          ###   ########.fr       */
+/*   Updated: 2021/02/14 15:56:28 by jcluzet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,8 @@ void	checkbox(t_display *display, char c, int map_x, int map_y)
 		display->color = 8388100;
 	if (c == '8')
 		display->color = 984427;
+	if (c == '4')
+		display->color = 5229232;
 	if ((int)display->player.x == map_x && (int)display->player.y == map_y)
 		display->color = 13910590;
 	drawsquare(display);
