@@ -23,11 +23,11 @@ int				cmp(char *s1, char *s2, size_t n)
 
 	i = 0;
 	if (!n)
-		return (0);
-	while (s1[i] && s2[i] && i < n - 1)
+		return (1);
+	while (i <= 6)
 	{
 		if (s1[i] != s2[i])
-			return ((unsigned char)s1[i] - s2[i]);
+			return (1);
 		++i;
 	}
 	return (0);
