@@ -25,12 +25,6 @@ int	raycasting(t_display *display)
 		display->index--;
 	}
 	sendrayon(display);
-	if (display->bmp == 1)
-	{
-		minimap(display);
-		drawgun(display);
-		drawlife(display);
-	}
 	return (0);
 }
 

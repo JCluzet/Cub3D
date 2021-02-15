@@ -17,6 +17,10 @@ int		create_bmp(t_display *display)
 	int				fd;
 	t_bmp_h			head;
 
+	raycasting(display);
+	minimap(display);
+	drawgun(display);
+	drawlife(display);
 	if ((fd = open("screenshot.bmp", O_CREAT | O_WRONLY | O_TRUNC, 0666)) < 0)
 		return (showerror(display, "Could not create .bmp file\n"));
 	head = set_bmp_header(display);

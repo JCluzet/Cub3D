@@ -48,7 +48,6 @@ int		newwindow(t_display *display)
 	}
 	loadtextures(display);
 	loadsprites(display);
-	raycasting(display);
 	if (display->bmp == 0)
 		mlx_put_image_to_window(display->mlx_ptr,
 			display->mlx_win, display->img, 0, 0);
