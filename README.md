@@ -1,4 +1,4 @@
-# Cub3D for MacOS & Linux 114% 
+# Cub3D for MacOS & Linux | Success with 114% 
 
 Cub3D is a 42's project made to recreate the first FPS video game in raycasting history, Wolfenstein3D.
 
