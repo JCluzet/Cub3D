@@ -6,13 +6,13 @@
 /*   By: jcluzet <jo@cluzet.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/12 18:14:15 by jcluzet           #+#    #+#             */
-/*   Updated: 2021/02/06 00:42:07 by jcluzet          ###   ########.fr       */
+/*   Updated: 2021/02/16 01:31:54 by jcluzet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../cub3d.h"
 
-int	raycasting(t_display *display)
+int	raycasting(t_display *display) // Envoi d'un rayon a partir du joueur (pour chaque pixel de ligne vertical)
 {
 	display->index = display->r1 - 1;
 	while (display->index > 0)
@@ -29,7 +29,7 @@ int	raycasting(t_display *display)
 	return (0);
 }
 
-int	sendrayon(t_display *display)
+int	sendrayon(t_display *display) // Calcul des coordonnées de l'intersection avec la prochaine case (deltadist)
 {
 	display->mapi.x = floor(display->player.x);
 	display->mapi.y = floor(display->player.y);
@@ -55,7 +55,7 @@ int	sendrayon(t_display *display)
 	return (0);
 }
 
-int	findwall(t_display *display)
+int	findwall(t_display *display) // Boucle sur chaque case jusqu'a trouver un mur
 {
 	int hit;
 
@@ -82,7 +82,7 @@ int	findwall(t_display *display)
 	return (0);
 }
 
-int	findtexturenum(t_display *display)
+int	findtexturenum(t_display *display) // recherche de la texture correspondante au mur trouvé
 {
 	if (display->side == 0)
 	{
@@ -104,13 +104,13 @@ int	findtexturenum(t_display *display)
 
 int	showraster(t_display *display)
 {
-	if (display->side == 0)
+	if (display->side == 0)                                      // Perwalldist = distance final entre le joeur et le mur trouvé (pour un rayon)
 		display->perwalldist = (display->mapi.x - display->player.x +
 				(1 - display->stepx) / 2) / display->d.x;
 	else
 		display->perwalldist = (display->mapi.y - display->player.y +
 				(1 - display->stepy) / 2) / display->d.y;
-	display->lineheight = (int)(display->r2 / display->perwalldist);
+	display->lineheight = (int)(display->r2 / display->perwalldist);     // Calcul de la hauteur du mur (plus perwalldist est grand, plus le mur est petit >raycasting)
 	display->startline = -display->lineheight / 2 + display->r2 / 2;
 	if (display->startline < 0)
 		display->startline = 0;
