@@ -1,6 +1,6 @@
 NAME		=	cub3D
 BMP			=	./screenshot.bmp
-MLX			=	libmlx.dylib
+MLX			=	libmlx.a
 
 SRCS			=	cub3d.c \
 					utils/*.c \

@@ -6,7 +6,7 @@
 /*   By: jcluzet <jo@cluzet.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/08 19:25:03 by jcluzet           #+#    #+#             */
-/*   Updated: 2021/02/12 02:28:53 by jcluzet          ###   ########.fr       */
+/*   Updated: 2021/02/16 01:22:43 by jcluzet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,6 @@ int		display(t_parse *parse, t_display *display)
 int		newwindow(t_display *display)
 {
 	display->mlx_ptr = mlx_init();
-	checkresolution(display);
 	display->img = mlx_new_image(display->mlx_ptr, display->r1, display->r2);
 	display->pxl = mlx_get_data_addr(display->img,
 			&(display->bpp), &(display->s_line),

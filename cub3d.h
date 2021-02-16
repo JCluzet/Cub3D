@@ -6,7 +6,7 @@
 /*   By: jcluzet <jo@cluzet.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/13 22:12:09 by jcluzet           #+#    #+#             */
-/*   Updated: 2021/02/12 02:53:34 by jcluzet          ###   ########.fr       */
+/*   Updated: 2021/02/16 01:23:23 by jcluzet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -240,7 +240,6 @@ int					create_bmp(t_display *display);
 int					stockresolution(char *line, \
 					t_parse *parse, t_display *display);
 int					stockcolorf(char *line, t_display *display);
-int					checkresolution(t_display *display);
 int					stockcolorc(char *line, t_display *display);
 void				drawloop(t_display *display, int y, int x);
 int					replacecharinmap(t_display *display, \

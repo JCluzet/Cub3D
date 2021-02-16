@@ -6,7 +6,7 @@
 /*   By: jcluzet <jo@cluzet.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/13 22:23:05 by jcluzet           #+#    #+#             */
-/*   Updated: 2021/02/12 02:26:27 by jcluzet          ###   ########.fr       */
+/*   Updated: 2021/02/16 01:23:08 by jcluzet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,20 +63,6 @@ int	stockcolorc(char *line, t_display *display)
 	if (display->rgbceiling[2] > 255)
 		showerror(display, "Color of Ceiling must be under 255 (RGB)");
 	display->textnum++;
-	return (1);
-}
-
-int	checkresolution(t_display *display)
-{
-	int x;
-	int y;
-
-	mlx_get_screen_size(display->mlx_ptr, &x, &y);
-	if (display->r1 > x)
-		display->r1 = x;
-	if (display->r2 > y)
-		display->r2 = y;
-	resizeminimap(display);
 	return (1);
 }
 
