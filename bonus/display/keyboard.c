@@ -6,7 +6,7 @@
 /*   By: jcluzet <jo@cluzet.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/11 19:54:37 by jcluzet           #+#    #+#             */
-/*   Updated: 2021/02/06 00:40:17 by jcluzet          ###   ########.fr       */
+/*   Updated: 2021/02/16 01:47:19 by jcluzet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,6 @@
 
 int		ft_keyboard(t_display *display)
 {
-	display->last_frame = clock();
-	if (display->next_frame > display->last_frame)
-		return (0);
-	display->next_frame = display->last_frame + (CLOCKS_PER_SEC / 100);
 	if (display->keyboard[ADVANCE])
 		moveplayer(1, display);
 	if (display->keyboard[BACK])

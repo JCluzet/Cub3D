@@ -6,7 +6,7 @@
 /*   By: jcluzet <jo@cluzet.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/08 19:25:03 by jcluzet           #+#    #+#             */
-/*   Updated: 2021/02/16 01:22:43 by jcluzet          ###   ########.fr       */
+/*   Updated: 2021/02/16 01:44:19 by jcluzet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,11 +63,11 @@ int		key_loop(t_display *display)
 	|| display->keyboard[ROT_RIGHT] || display->keyboard[RIGHT]
 	|| display->keyboard[LEFT] || display->keyboard[BACK]
 	|| display->keyboard[ADVANCE])
-	{
 		raycasting(display);
-		mlx_put_image_to_window(display->mlx_ptr,
-		display->mlx_win, display->img, 0, 0);
-	}
+	if (display->spritecounted != 0)
+		showsprite(display);
+	mlx_put_image_to_window(display->mlx_ptr,
+	display->mlx_win, display->img, 0, 0);
 	return (0);
 }
 

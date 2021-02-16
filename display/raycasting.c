@@ -6,7 +6,7 @@
 /*   By: jcluzet <jo@cluzet.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/12 18:14:15 by jcluzet           #+#    #+#             */
-/*   Updated: 2021/02/16 01:31:54 by jcluzet          ###   ########.fr       */
+/*   Updated: 2021/02/16 01:43:16 by jcluzet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,6 @@ int	raycasting(t_display *display) // Envoi d'un rayon a partir du joueur (pour 
 		display->index--;
 	}
 	sendrayon(display);
-	if (display->spritecounted != 0)
-		showsprite(display);
 	return (0);
 }
 
