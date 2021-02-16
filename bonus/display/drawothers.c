@@ -6,7 +6,7 @@
 /*   By: jcluzet <jo@cluzet.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/08 19:25:03 by jcluzet           #+#    #+#             */
-/*   Updated: 2021/02/12 15:02:55 by jcluzet          ###   ########.fr       */
+/*   Updated: 2021/02/16 03:05:39 by jcluzet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,13 +19,16 @@ void	drawgun(t_display *display)
 
 	x = 0;
 	y = 0;
-	while (y < display->heighttext[4])
+	if (display->keyboard[GUN])
+		display->shoot = 1;
+	getgunnum(display);
+	while (y < display->heighttext[display->gunnum])
 	{
-		while (x < display->widthtext[4])
+		while (x < display->widthtext[display->gunnum])
 		{
 			display->color = *(unsigned int*)
-			(display->ptr[4] + display->s_line2[4]
-			* y + x * (display->bpp2[4] / 8));
+			(display->ptr[display->gunnum] + display->s_line2[display->gunnum]
+			* y + x * (display->bpp2[display->gunnum] / 8));
 			if (display->color != 0 && y < 150)
 				put_pxl(display, display->r1 / 2 + x,
 				display->r2 - 150 + y, display->color);
@@ -34,6 +37,27 @@ void	drawgun(t_display *display)
 		x = 0;
 		y++;
 	}
+}
+
+int		getgunnum(t_display *display)
+{
+	if (display->gunnum == 14 && display->shoot == 1)
+	{
+		display->gunnum = 15;
+		display->inprocess = 1;
+	}
+	if (display->gunnum == 15 && display->inprocess == 0)
+	{
+		display->inprocess = 0;
+		display->gunnum = 16;
+	}
+	if (display->gunnum == 16 && display->inprocess == 0)
+	{
+		display->gunnum = 14;
+		display->shoot = 0;
+	}
+	display->inprocess = 0;
+	return (0);
 }
 
 void	drawlife(t_display *display)

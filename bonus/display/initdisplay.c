@@ -6,7 +6,7 @@
 /*   By: jcluzet <jo@cluzet.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/08 19:25:03 by jcluzet           #+#    #+#             */
-/*   Updated: 2021/02/16 01:42:59 by jcluzet          ###   ########.fr       */
+/*   Updated: 2021/02/16 02:45:25 by jcluzet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,8 +80,11 @@ void	initdisplay(t_display *display, t_parse *parse)
 	display->switchoff = 0;
 	display->s_line = 0;
 	display->pspeed = 0.1;
+	display->inprocess = 0;
+	display->gunnum = 14;
 	display->rotspeed = 0.04;
 	display->index = 0;
+	display->shoot = 0;
 	display->spritemove = 0;
 	display->r1 = parse->r1;
 	display->r2 = parse->r2;

@@ -6,7 +6,7 @@
 /*   By: jcluzet <jo@cluzet.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/13 22:12:09 by jcluzet           #+#    #+#             */
-/*   Updated: 2021/02/16 01:23:35 by jcluzet          ###   ########.fr       */
+/*   Updated: 2021/02/16 03:07:26 by jcluzet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,7 @@
 #  define LIGHTS 29
 #  define OPEN_DOOR 25
 #  define CLOSERED 17
+#  define GUN 49
 # else
 #  define ADVANCE 119
 #  define BACK 115
@@ -45,6 +46,7 @@
 #  define LIGHTS 48
 #  define OPEN_DOOR 57
 #  define CLOSERED 33
+#  define GUN 32
 # endif
 
 typedef struct		s_xy1
@@ -109,10 +111,10 @@ typedef struct		s_display
 	int				keyboard[100000];
 	int				index;
 	int				bpp;
-	int				bpp2[14];
+	int				bpp2[17];
 	int				s_line;
-	int				s_line2[14];
-	int				ed2[14];
+	int				s_line2[17];
+	int				ed2[17];
 	int				ed;
 	int				startline;
 	int				endline;
@@ -150,6 +152,7 @@ typedef struct		s_display
 	int				lineheight;
 	double			perwalldist;
 	double			pspeed;
+	int				gunnum;
 	int				mapx;
 	int				havekey;
 	int				initsuccess;
@@ -159,18 +162,23 @@ typedef struct		s_display
 	int				*spritey;
 	double			*spritedist;
 	int				numberofplayer;
-	int				widthtext[14];
-	int				heighttext[14];
+	int				widthtext[17];
+	int				heighttext[17];
 	void			*text_no;
 	void			*text_so;
 	char			*filename;
+	int				shoot;
 	int				mapboleen;
+	int				inprocess;
 	void			*text_we;
 	void			*text_ea;
 	void			*text_floor;
 	void			*text_ceiling;
 	void			*text_life;
 	void			*text_gun;
+	void			*text_gun0;
+	void			*text_gun1;
+	void			*text_gun2;
 	void			*text_door;
 	void			*sprite;
 	void			*sprite2;
@@ -178,7 +186,7 @@ typedef struct		s_display
 	void			*sprite3move;
 	void			*sprite4move;
 	int				textnum;
-	char			*ptr[14];
+	char			*ptr[17];
 	clock_t			last_frame;
 	clock_t			next_frame;
 	unsigned int	color;
@@ -228,6 +236,7 @@ int					stocktextures_so(char *line, t_display *display);
 int					checkaround(int mapx, int mapy, t_display *display);
 int					stocktextures_ea(char *line, t_display *display);
 int					stocktextures_no(char *line, t_display *display);
+void				loadtexturesgun(t_display *display);
 int					stocktextures_s(char *line, t_display *display);
 void				printsprite(t_display *display, int index);
 int					opendoor(t_display *display);
@@ -249,6 +258,7 @@ void				loadtexturesbonus(t_display *display);
 void				getinfosprite(t_display *display, \
 					int sprites, int spritenum);
 int					key_loop(t_display *display);
+int					getgunnum(t_display *display);
 void				checkkeybonus(t_display *display);
 int					checkcubextension(char *str, t_display *display);
 void				countsprite(t_display *display);

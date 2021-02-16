@@ -6,7 +6,7 @@
 /*   By: jcluzet <jo@cluzet.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/08 19:25:03 by jcluzet           #+#    #+#             */
-/*   Updated: 2021/02/12 02:52:07 by jcluzet          ###   ########.fr       */
+/*   Updated: 2021/02/16 02:53:37 by jcluzet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,10 +48,6 @@ void	checksizetext(t_display *display)
 
 void	loadtexturesbonus(t_display *display)
 {
-	if ((display->text_gun = mlx_xpm_file_to_image(display->mlx_ptr,
-	"./textures/weapon.xpm", &display->widthtext[4], &display->heighttext[4])))
-		display->ptr[4] = mlx_get_data_addr(display->text_gun,
-		&(display->bpp2[4]), &(display->s_line2[4]), &(display->ed2[4]));
 	if ((display->text_door = mlx_xpm_file_to_image(display->mlx_ptr,
 	"./textures/Door.xpm", &display->widthtext[6], &display->heighttext[6])))
 		display->ptr[6] = mlx_get_data_addr(display->text_door,
@@ -64,6 +60,23 @@ void	loadtexturesbonus(t_display *display)
 	"./textures/lifeup.xpm", &display->widthtext[7], &display->heighttext[7])))
 		display->ptr[7] = mlx_get_data_addr(display->text_life,
 		&(display->bpp2[7]), &(display->s_line2[7]), &(display->ed2[7]));
+	loadtexturesgun(display);
+}
+
+void	loadtexturesgun(t_display *display)
+{
+	if ((display->text_gun0 = mlx_xpm_file_to_image(display->mlx_ptr,
+	"./textures/weapon1.xpm", &display->widthtext[14], &display->heighttext[14])))
+		display->ptr[14] = mlx_get_data_addr(display->text_gun0,
+		&(display->bpp2[14]), &(display->s_line2[14]), &(display->ed2[14]));
+	if ((display->text_gun1 = mlx_xpm_file_to_image(display->mlx_ptr,
+	"./textures/weapon2.xpm", &display->widthtext[15], &display->heighttext[15])))
+		display->ptr[15] = mlx_get_data_addr(display->text_gun1,
+		&(display->bpp2[15]), &(display->s_line2[15]), &(display->ed2[15]));
+	if ((display->text_gun2 = mlx_xpm_file_to_image(display->mlx_ptr,
+	"./textures/weapon3.xpm", &display->widthtext[16], &display->heighttext[16])))
+		display->ptr[16] = mlx_get_data_addr(display->text_gun2,
+		&(display->bpp2[16]), &(display->s_line2[16]), &(display->ed2[16]));
 	resizelife(display);
 }
 
