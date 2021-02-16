@@ -1,4 +1,4 @@
-# Cub3D for MacOS & Linux
+# Cub3D for MacOS & Linux | Success with 114% 
 
 Cub3D is a 42's project made to recreate the first FPS video game in raycasting history, Wolfenstein3D.
 
@@ -13,12 +13,14 @@ Other example of Basic Parts with import texture :
  TO RUN : 
  ###     make re && ./cub3D maps/map.cub
 
-## BONUS PARTS 💥 :
+## BONUS PARTS 114/115 💥 :
 
 <img width="595" alt="Capture d’écran 2021-02-06 à 01 36 39" src="https://user-images.githubusercontent.com/55356071/107102984-5dfa7480-681c-11eb-8925-040797c889bc.png">
  
  TO RUN : 
  ###     make bonus && ./cub3D_bonus maps/map_BONUS.cub
+ 
+ 
 
 ## Bonus Parts include :
 
