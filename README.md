@@ -4,11 +4,13 @@ Cub3D is a 42's project made to recreate the first FPS video game in raycasting 
 
 ## BASIC PARTS 📝 : 
 
-<img width="595" alt="Capture d’écran 2021-02-06 à 01 35 37" src="https://user-images.githubusercontent.com/55356071/107102932-34d9e400-681c-11eb-8725-83c48bcec282.png">
+![ezgif com-gif-maker](https://user-images.githubusercontent.com/55356071/112175931-f34c9f00-8bf7-11eb-8276-23382485172a.gif)
 
-Other example of Basic Parts with import texture :
 
-<img width="595" alt="Capture d’écran 2021-02-06 à 01 50 46" src="https://user-images.githubusercontent.com/55356071/107103396-c8f87b00-681d-11eb-8778-12f80834caee.png">
+Other example of Basic Parts with crazy import texture :
+
+![ezgif com-gif-maker](https://user-images.githubusercontent.com/55356071/112176285-4292cf80-8bf8-11eb-8e8d-1d042c8a7681.gif)
+
  
  TO RUN : 
  ###     make re && ./cub3D maps/map.cub
