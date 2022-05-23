@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   getdatamap.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jcluzet <jo@cluzet.fr>                     +#+  +:+       +#+        */
+/*   By: jcluzet <jcluzet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/08 19:25:03 by jcluzet           #+#    #+#             */
-/*   Updated: 2021/02/06 00:40:41 by jcluzet          ###   ########.fr       */
+/*   Updated: 2022/05/23 18:15:08 by jcluzet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,11 @@ void	getxymap(t_parse *parse, char *filename)
 {
 	int		fd;
 	int		b;
-	int		len;
+	// int		len;
 	char	*line;
 
 	b = 1;
-	len = 0;
+	// len = 0;
 	parse->sizemap.x = 1;
 	parse->sizemap.y = 0;
 	fd = open(filename, O_RDONLY);

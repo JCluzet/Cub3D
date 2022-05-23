@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   stockmap.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jcluzet <jo@cluzet.fr>                     +#+  +:+       +#+        */
+/*   By: jcluzet <jcluzet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/06 00:37:18 by jocluzet          #+#    #+#             */
-/*   Updated: 2021/02/06 00:40:56 by jcluzet          ###   ########.fr       */
+/*   Updated: 2022/05/23 18:15:02 by jcluzet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,9 +75,9 @@ char		initposplayer(char pos, int x, int y, t_display *display)
 int			sortmap(t_parse *parse, char *line, int len, t_display *display)
 {
 	int i;
-	int v;
+	// int v;
 
-	v = 0;
+	// v = 0;
 	i = 0;
 	while (line[i] != '\0')
 	{
